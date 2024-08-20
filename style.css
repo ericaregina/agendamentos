@@ -1,0 +1,220 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('images/mar.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    position: relative;
+    overflow: auto;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2); /* Fundo branco com 30% de opacidade */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    max-width: 1200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    margin: 20px auto;
+}
+
+.flex-container {
+    display: flex;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+h1, h2 {
+    color: #141414;
+    font-size: 2.0em;
+}
+
+label {
+    display: block;
+    margin: 8px 0 4px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    border: 1px solid #ebe7e7;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+button {
+    background-color: rgba(152, 137, 240, 0.8); /* Fundo com 80% de opacidade */
+    color: white;
+    border: 1px solid rgba(152, 137, 240, 0.8); /* Borda com a mesma cor do fundo */
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    transition: background-color 0.3s, border-color 0.3s; /* Transição suave para mudança de cor e borda */
+}
+
+button:hover {
+    background-color: rgba(195, 106, 158, 0.8); /* Fundo ao passar o mouse com 80% de opacidade */
+    border-color: rgba(195, 106, 158, 0.8); /* Borda ao passar o mouse com 80% de opacidade */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+li {
+    background-color: rgba(241, 226, 226, 0.8); /* Fundo com 80% de opacidade */
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+}
+
+li .texto {
+    flex: 1;
+    color: #333;
+}
+
+li .valor {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+li.concluido .texto {
+    text-decoration: line-through;
+    color: #faf6f6;
+}
+
+button.concluido {
+    background-color: rgba(4, 90, 202, 0.8); /* Fundo com 80% de opacidade */
+    color: white;
+    border: 1px solid rgba(4, 90, 202, 0.8); /* Borda com a mesma cor do fundo */
+}
+
+button.concluido:hover {
+    background-color: rgba(4, 90, 202, 0.8); /* Fundo ao passar o mouse com 80% de opacidade */
+    border-color: rgba(4, 90, 202, 0.8); /* Borda ao passar o mouse com 80% de opacidade */
+}
+
+#total-lucro {
+    margin-top: 15px;
+}
+
+#form-cliente {
+    margin-top: 20px;
+}
+
+#form-cliente input {
+    margin-bottom: 10px;
+}
+
+#lista-clientes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#lista-clientes li {
+    background-color: rgba(226, 241, 241, 0.8); /* Fundo com 80% de opacidade */
+    border: 1px solid rgba(226, 241, 241, 0.8); /* Borda com a mesma cor do fundo */
+    border-radius: 4px;
+    margin: 5px 0;
+    padding: 8px;
+    text-align: left;
+}
+
+#lista-clientes li:nth-child(odd) {
+    background-color: rgba(247, 249, 249, 0.8); /* Fundo com 80% de opacidade */
+}
+
+/* Novo CSS para separar agendamentos e lucro à direita */
+#agendamentos-lucro-container {
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    width: 300px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6); /* Fundo branco com 60% de opacidade */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#agendamentos-lucro-container h2 {
+    text-align: center;
+}
+
+#agendamentos-lucro-container ul {
+    max-height: 300px; /* Ajusta conforme necessário */
+}
+
+#total-lucro h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    #agendamentos-lucro-container {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    h1, h2 {
+        font-size: 1.2em;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    input[type="number"],
+    select {
+        font-size: 0.8em;
+    }
+
+    button {
+        font-size: 0.8em;
+    }
+
+    ul {
+        max-height: 150px;
+    }
+}

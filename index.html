@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Agendamento </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/mar.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            margin-top: 2rem;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            position: relative;
+            overflow: auto;
+        }
+        
+        /* Restante do seu CSS aqui */
+    </style>
+</head>
+<body>
+    <div class="background-blur"></div> 
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Nome da Empresa</a>
+            <form class="d-flex ms-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn btn-secondary">Busque seus Agendamentos!</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Cadastro de Cliente</h2>
+                <form id="form-cliente">
+                    <label for="nome-cliente">Nome do Cliente:</label>
+                    <input type="text" id="nome-cliente" name="nome" class="form-control" required>
+                    
+                    <label for="email-cliente">Email:</label>
+                    <input type="email" id="email-cliente" name="email" class="form-control" required>
+                    
+                    <button type="submit" class="btn btn-primary">Salvar Cliente</button>
+                </form>
+
+                <ul id="lista-clientes" class="list-group mt-3"></ul>
+
+                <h2 class="mt-5">Adicionar Agendamento</h2>
+                <form id="form-agendamento">
+                    <label for="cliente">Cliente:</label>
+                    <select id="cliente" name="cliente" class="form-control" required>
+                        <option value="">Selecione um cliente</option>
+                    </select>
+                    
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" class="form-control" required>
+                    
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" class="form-control" required>
+                    
+                    <label for="valor">Valor (R$):</label>
+                    <input type="number" id="valor" name="valor" class="form-control" required step="0.01">
+                    
+                    <button type="submit" class="btn btn-primary">Adicionar Agendamento</button>
+                </form>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Agendamentos Salvos</h2>
+                <ul id="lista-agendamentos" class="list-group mt-3"></ul>
+                
+                <div id="total-lucro" class="mt-4">
+                    <h2>Total de Lucro: R$ <span id="total-valor">0.00</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
